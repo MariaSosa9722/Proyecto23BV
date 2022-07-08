@@ -1,0 +1,44 @@
+﻿<Window x:Class="ProyectoU123BV.Sistema"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoU123BV"
+        mc:Ignorable="d"
+        Title="Sistema" Height="450" Width="800">
+    <Grid>
+        <Label Content="Dashboard" HorizontalAlignment="Left" Margin="42,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="-7.433,-4.183" FontSize="50" FontFamily="robot" Background="Azure" Foreground="#FF0EC18B"/>
+
+
+
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" Margin="42,133,24,54" IsSynchronizedWithCurrentItem="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Usuario" Binding="{Binding User}"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+
+                <DataGridTemplateColumn Header="Editar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+
+    </Grid>
+
+
+</Window>
