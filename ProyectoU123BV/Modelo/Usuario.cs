@@ -12,5 +12,9 @@ namespace ProyectoU123BV.Modelo
         public string Nombre { get; set; }    
         public string User { get; set; }
         public string Password { get; set; }
+
+
+        //Esto es una prueba para git
+        public string Code { get; set; }
     }
 }
