@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProyectoU123BV.Modelo
 {
-    internal class Roles
+    public class Roles
     {
-    }
+        public int RoleId { get; set; } 
+    }    
 }
