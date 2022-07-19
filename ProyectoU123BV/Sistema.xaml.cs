@@ -22,12 +22,14 @@ namespace ProyectoU123BV
     /// </summary>
     public partial class Sistema : Window
     {
+           public List<Roles> Roles { get; set; }
         public Sistema()
         {
             InitializeComponent();
             GetUsers();
+            GetRoles();
         }
-
+          
 
 
 
@@ -41,6 +43,26 @@ namespace ProyectoU123BV
 
             }
 
+          
+
+        }
+
+
+
+        public void GetRoles()
+        {
+
+            using (var _context = new AplicationdbContext())
+            {
+                var rol = _context.Roles.ToList();
+
+                Roles = rol;
+
+
+            }
+
+            SelectRol.ItemsSource = Roles;
+            //SelectRol.DisplayMemberPath = "Nombre";
 
         }
 

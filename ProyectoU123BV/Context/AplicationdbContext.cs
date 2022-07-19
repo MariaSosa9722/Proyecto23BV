@@ -17,5 +17,6 @@ namespace ProyectoU123BV.Context
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Roles> Roles { get; set; } 
     }
 }

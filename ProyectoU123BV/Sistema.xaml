@@ -42,7 +42,8 @@
         <Label Content="Usuario" HorizontalAlignment="Left" Margin="45,231,0,0" VerticalAlignment="Top"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="45,192,0,0" VerticalAlignment="Top"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="47,275,0,0" VerticalAlignment="Top" Height="23"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="81,337,0,0" VerticalAlignment="Top" Background="#FF58E2A5" Click="Button_Editar"/>
+        <ComboBox x:Name="SelectRol" DisplayMemberPath="Nombre" SelectedValuePath="Id"  ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top" Width="120" />
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="82,360,0,0" VerticalAlignment="Top" Background="#FF58E2A5" Click="Button_Editar"/>
 
 
 
