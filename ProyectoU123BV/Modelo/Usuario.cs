@@ -15,7 +15,7 @@ namespace ProyectoU123BV.Modelo
         public string Password { get; set; }
     
         [ForeignKey("Roles")]
-        public int FKRol { get; set; }
+        public int? FKRol { get; set; }
 
         public Roles Roles { get; set; }    
 

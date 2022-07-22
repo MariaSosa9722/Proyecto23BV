@@ -77,6 +77,7 @@ namespace ProyectoU123BV
                 txtNombre.Text = usuario.Nombre.ToString();
                 txtUser.Text = usuario.User.ToString();
                 txtPassword.Text = usuario.Password.ToString();
+           
 
             }
             catch (Exception ex)
@@ -89,26 +90,64 @@ namespace ProyectoU123BV
 
         private void Button_Editar(object sender, RoutedEventArgs e)
         {
-            Usuario usuarioUpdate = new Usuario();
-
-            usuarioUpdate.Id = int.Parse(txtId.Text);
-
-            using (var _context = new AplicationdbContext())
+            try
             {
-                usuarioUpdate = _context.Usuarios.Find(usuarioUpdate.Id);
-                usuarioUpdate.Nombre = txtNombre.Text;
-                usuarioUpdate.User = txtUser.Text;
-                usuarioUpdate.Password = txtPassword.Text;  
 
-                _context.Entry(usuarioUpdate).State = EntityState.Modified;
-                _context.SaveChanges();
+                Usuario user = new Usuario();
 
-                GetUsers();
+                if (txtId.Text == "")
+                {
+                    using (var _context = new AplicationdbContext())
+                    {
+                        user.Nombre = txtNombre.Text;
+                        user.User = txtUser.Text;
+                        user.Password = txtPassword.Text;
+                        
+
+
+
+                        _context.Usuarios.Add(user);
+                        _context.SaveChanges();
+
+                    }
+
+                    GetUsers();
+
+                }
+                else
+                {
+
+
+                    user.Id = int.Parse(txtId.Text);
+
+                    using (var _context = new AplicationdbContext())
+                    {
+                        user = _context.Usuarios.Find(user.Id);
+                        user.Nombre = txtNombre.Text;
+                        user.User = txtUser.Text;
+                        user.Password = txtPassword.Text;
+
+                        _context.Entry(user).State = EntityState.Modified;
+                        _context.SaveChanges();
+
+
+
+
+                    }
+
+                    GetUsers();
+                }
+
+
+
 
 
             }
+            catch (Exception ex )
+            {
 
-
+                throw new Exception("Error interno"+ex.Message);
+            }
 
         }
     }
